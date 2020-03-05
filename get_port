@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for (( i = $1; i < $2; i++ ))
+do
+        if [[ ! $(netstat -nat | grep $i) ]] 
+        then 
+                echo "$i";
+               break; 
+        fi;
+done
